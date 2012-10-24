@@ -1,0 +1,216 @@
+[Oct 24 2012 11:20:09.000000 - INFO] POST /api/adwords/cm/v201209/CampaignService HTTP/1.1
+Host: adwords-sandbox.google.com
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/5.3.17, gzip
+Accept-Encoding: gzip, deflate
+Content-Encoding: gzip
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 667
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201209">
+  <SOAP-ENV:Header>
+    <ns1:RequestHeader>
+      <ns1:authToken>*****</ns1:authToken>
+      <ns1:developerToken>jarrett.croll@gmail.com++CAD</ns1:developerToken>
+      <ns1:userAgent>audiobookmart Adwords Optimizer (AwApi/3.1.1, php/5.3.17)</ns1:userAgent>
+    </ns1:RequestHeader>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns1:get>
+      <ns1:serviceSelector>
+        <ns1:fields>Id</ns1:fields>
+        <ns1:fields>Name</ns1:fields>
+        <ns1:ordering>
+          <ns1:field>Name</ns1:field>
+          <ns1:sortOrder>ASCENDING</ns1:sortOrder>
+        </ns1:ordering>
+        <ns1:paging>
+          <ns1:startIndex>0</ns1:startIndex>
+          <ns1:numberResults>500</ns1:numberResults>
+        </ns1:paging>
+      </ns1:serviceSelector>
+    </ns1:get>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=UTF-8
+Content-Encoding: gzip
+Date: Wed, 24 Oct 2012 18:20:19 GMT
+Expires: Wed, 24 Oct 2012 18:20:19 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Content-Length: 367
+Server: GSE
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <ResponseHeader xmlns="https://adwords.google.com/api/adwords/cm/v201209">
+      <requestId>0004ccd2238fd5b00a83812200000b23</requestId>
+      <serviceName>CampaignService</serviceName>
+      <methodName>get</methodName>
+      <operations>1</operations>
+      <responseTime>1304</responseTime>
+      <units>1</units>
+    </ResponseHeader>
+  </soap:Header>
+  <soap:Body>
+    <getResponse xmlns="https://adwords.google.com/api/adwords/cm/v201209">
+      <rval>
+        <totalNumEntries>0</totalNumEntries>
+        <Page.Type>CampaignPage</Page.Type>
+        <totalBudget>
+          <period>DAILY</period>
+          <amount>
+            <ComparableValue.Type>Money</ComparableValue.Type>
+            <microAmount>0</microAmount>
+          </amount>
+        </totalBudget>
+      </rval>
+    </getResponse>
+  </soap:Body>
+</soap:Envelope>
+
+[Oct 24 2012 11:20:29.000000 - INFO] POST /api/adwords/mcm/v201209/ManagedCustomerService HTTP/1.1
+Host: adwords-sandbox.google.com
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/5.3.17, gzip
+Accept-Encoding: gzip, deflate
+Content-Encoding: gzip
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 627
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201209" xmlns:ns2="https://adwords.google.com/api/adwords/mcm/v201209">
+  <SOAP-ENV:Header>
+    <ns2:RequestHeader>
+      <ns1:authToken>*****</ns1:authToken>
+      <ns1:developerToken>jarrett.croll@gmail.com++CAD</ns1:developerToken>
+      <ns1:userAgent>audiobookmart Adwords Optimizer (AwApi/3.1.1, php/5.3.17)</ns1:userAgent>
+    </ns2:RequestHeader>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns2:get>
+      <ns2:serviceSelector>
+        <ns1:fields>Login</ns1:fields>
+        <ns1:fields>CustomerId</ns1:fields>
+        <ns1:fields>Name</ns1:fields>
+      </ns2:serviceSelector>
+    </ns2:get>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=UTF-8
+Content-Encoding: gzip
+Date: Wed, 24 Oct 2012 18:20:39 GMT
+Expires: Wed, 24 Oct 2012 18:20:39 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Content-Length: 617
+Server: GSE
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <ns2:ResponseHeader xmlns:ns2="https://adwords.google.com/api/adwords/mcm/v201209" xmlns="https://adwords.google.com/api/adwords/cm/v201209">
+      <requestId>0004ccd224b5d7500a83902300003756</requestId>
+      <serviceName>ManagedCustomerService</serviceName>
+      <methodName>get</methodName>
+      <operations>0</operations>
+      <responseTime>1590</responseTime>
+      <units>0</units>
+    </ns2:ResponseHeader>
+  </soap:Header>
+  <soap:Body>
+    <ns2:getResponse xmlns="https://adwords.google.com/api/adwords/cm/v201209" xmlns:ns2="https://adwords.google.com/api/adwords/mcm/v201209">
+      <ns2:rval>
+        <totalNumEntries>6</totalNumEntries>
+        <Page.Type>ManagedCustomerPage</Page.Type>
+        <ns2:entries>
+          <ns2:name/>
+          <ns2:login>jarrett.croll@gmail.com</ns2:login>
+          <ns2:companyName/>
+          <ns2:customerId>2677688771</ns2:customerId>
+          <ns2:canManageClients>true</ns2:canManageClients>
+          <ns2:currencyCode>USD</ns2:currencyCode>
+          <ns2:dateTimeZone>America/Los_Angeles</ns2:dateTimeZone>
+        </ns2:entries>
+        <ns2:entries>
+          <ns2:name/>
+          <ns2:login>client_1+jarrett.croll@gmail.com</ns2:login>
+          <ns2:companyName/>
+          <ns2:customerId>8741547828</ns2:customerId>
+          <ns2:canManageClients>false</ns2:canManageClients>
+          <ns2:currencyCode>USD</ns2:currencyCode>
+          <ns2:dateTimeZone>America/New_York</ns2:dateTimeZone>
+        </ns2:entries>
+        <ns2:entries>
+          <ns2:name/>
+          <ns2:login>client_2+jarrett.croll@gmail.com</ns2:login>
+          <ns2:companyName/>
+          <ns2:customerId>8905167255</ns2:customerId>
+          <ns2:canManageClients>false</ns2:canManageClients>
+          <ns2:currencyCode>USD</ns2:currencyCode>
+          <ns2:dateTimeZone>America/New_York</ns2:dateTimeZone>
+        </ns2:entries>
+        <ns2:entries>
+          <ns2:name/>
+          <ns2:login>client_3+jarrett.croll@gmail.com</ns2:login>
+          <ns2:companyName/>
+          <ns2:customerId>5467473104</ns2:customerId>
+          <ns2:canManageClients>false</ns2:canManageClients>
+          <ns2:currencyCode>USD</ns2:currencyCode>
+          <ns2:dateTimeZone>America/New_York</ns2:dateTimeZone>
+        </ns2:entries>
+        <ns2:entries>
+          <ns2:name/>
+          <ns2:login>client_4+jarrett.croll@gmail.com</ns2:login>
+          <ns2:companyName/>
+          <ns2:customerId>2029778953</ns2:customerId>
+          <ns2:canManageClients>false</ns2:canManageClients>
+          <ns2:currencyCode>USD</ns2:currencyCode>
+          <ns2:dateTimeZone>America/New_York</ns2:dateTimeZone>
+        </ns2:entries>
+        <ns2:entries>
+          <ns2:name/>
+          <ns2:login>client_5+jarrett.croll@gmail.com</ns2:login>
+          <ns2:companyName/>
+          <ns2:customerId>8093638010</ns2:customerId>
+          <ns2:canManageClients>false</ns2:canManageClients>
+          <ns2:currencyCode>USD</ns2:currencyCode>
+          <ns2:dateTimeZone>America/New_York</ns2:dateTimeZone>
+        </ns2:entries>
+        <ns2:links>
+          <ns2:managerCustomerId>2677688771</ns2:managerCustomerId>
+          <ns2:clientCustomerId>8741547828</ns2:clientCustomerId>
+        </ns2:links>
+        <ns2:links>
+          <ns2:managerCustomerId>2677688771</ns2:managerCustomerId>
+          <ns2:clientCustomerId>8905167255</ns2:clientCustomerId>
+        </ns2:links>
+        <ns2:links>
+          <ns2:managerCustomerId>2677688771</ns2:managerCustomerId>
+          <ns2:clientCustomerId>5467473104</ns2:clientCustomerId>
+        </ns2:links>
+        <ns2:links>
+          <ns2:managerCustomerId>2677688771</ns2:managerCustomerId>
+          <ns2:clientCustomerId>2029778953</ns2:clientCustomerId>
+        </ns2:links>
+        <ns2:links>
+          <ns2:managerCustomerId>2677688771</ns2:managerCustomerId>
+          <ns2:clientCustomerId>8093638010</ns2:clientCustomerId>
+        </ns2:links>
+      </ns2:rval>
+    </ns2:getResponse>
+  </soap:Body>
+</soap:Envelope>
+

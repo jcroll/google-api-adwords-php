@@ -1,2 +1,3 @@
 src/Google/Api/Ads/AdWords/auth.ini
 src/Google/Api/Ads/AdWords/settings.ini
+idea/*
