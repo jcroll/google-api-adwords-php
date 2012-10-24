@@ -1,0 +1,397 @@
+<?xml version="1.0"?>
+<!-- ======================================================================= -->
+<!-- See README file for requirements                                        -->
+<!-- ======================================================================= -->
+<project basedir="." default="generate" name="aw_api_php_lib">
+  <property file="${project.basedir}/build.properties"/>
+
+  <property name="adx-examples.dir" value="${project.basedir}/adx-examples"/>
+  <property name="build.dir" value="${project.basedir}/build"/>
+  <property name="build_lib.dir" value="${project.basedir}/build_lib"/>
+  <property name="dist.dir" value="${project.basedir}/dist"/>
+  <property name="docs.dir" value="${project.basedir}/docs"/>
+  <property name="examples.dir" value="${project.basedir}/examples"/>
+  <property name="logs.dir" value="${project.basedir}/logs"/>
+  <property name="report.dir" value="${project.basedir}/report"/>
+  <property name="src.dir" value="${project.basedir}/src"/>
+  <property name="test_data.dir" value="${project.basedir}/test_data"/>
+  <property name="tests.dir" value="${project.basedir}/tests"/>
+
+  <taskdef name="wsdl2php" classname="build_lib.Wsdl2PhpTask" />
+
+  <!-- =================================================================== -->
+  <!-- Initialization target                                               -->
+  <!-- =================================================================== -->
+  <target name="init">
+    <mkdir dir="${build.dir}"/>
+    <mkdir dir="${dist.dir}"/>
+    <mkdir dir="${report.dir}"/>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Target: clean                                                       -->
+  <!-- =================================================================== -->
+  <target name="clean" depends="init">
+    <delete quiet="true" includeemptydirs="true">
+      <fileset dir="${build.dir}" />
+      <fileset dir="${dist.dir}" />
+      <fileset dir="${docs.dir}">
+        <exclude name="README"/>
+        <exclude name="**/.svn/**"/>
+      </fileset>
+      <fileset dir="${logs.dir}">
+        <exclude name="README"/>
+        <exclude name="**/.svn/**"/>
+      </fileset>
+      <fileset dir="${report.dir}" />
+    </delete>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Target: generate php from wsdls                                     -->
+  <!-- =================================================================== -->
+  <target name="generate">
+    <foreach list="${api.versions}" param="version" target="generate-version"/>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Target: generate version                                            -->
+  <!-- =================================================================== -->
+  <target name="generate-version">
+    <property name="version.dir"
+        value="${src.dir}/Google/Api/Ads/AdWords/${version}"/>
+    <delete quiet="true" includeemptydirs="true">
+      <fileset dir="${version.dir}">
+        <exclude name="**/.svn/**"/>
+      </fileset>
+    </delete>
+    <mkdir dir="${version.dir}"/>
+    <foreach list="${api.versions.${version}.services}" param="service"
+        target="generate-service"/>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Target: generate service                                            -->
+  <!-- =================================================================== -->
+  <target name="generate-service">
+    <property name="service.wsdl"
+        value="${api.versions.${version}.services.${service}.wsdl}"/>
+    <wsdl2php
+        url="${service.wsdl}"
+        serviceName="${service}"
+        version="${version}"
+        author="${lib.author}"
+        package="${lib.package}"
+        outputDir="${version.dir}"
+        classmap='{"getResponse":"${service}GetResponse", "get":"${service}Get", "mutate":"${service}Mutate", "mutateResponse":"${service}MutateResponse"}'
+        conflictClassmap='{"DateTime":"AdWordsDateTime", "SoapHeader":"SoapRequestHeader"}'
+        skipClassNameCheckTypes="Target, Location"
+        soapClientClassName="AdWordsSoapClient"
+        soapClientClassPath='dirname(__FILE__) . "/../Lib/AdWordsSoapClient.php"'
+        proxy="${wsdl2php.proxy}"
+        enablePseudoNamespaces="${wsdl2php.enablePseudoNamespaces}"/>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Target: run tests for v201109                                       -->
+  <!-- =================================================================== -->
+  <target name="test-v201109" depends="init">
+    <mkdir dir="report" />
+    <phpunit haltonfailure="false" printsummary="true">
+      <batchtest>
+        <fileset dir="${tests.dir}">
+          <include name="Google/Api/Ads/AdWords/v201109/*Test.php"/>
+          <include name="examples/v201109/*Test.php"/>
+        </fileset>
+      </batchtest>
+      <formatter type="xml" todir="report" outfile="test_results_v201109.xml"/>
+    </phpunit>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Target: run tests for AdX v201109                                   -->
+  <!-- =================================================================== -->
+  <target name="test-adx-v201109" depends="init">
+    <mkdir dir="report" />
+    <phpunit haltonfailure="false" printsummary="true">
+      <batchtest>
+        <fileset dir="${tests.dir}">
+          <include name="adx-examples/v201109/*Test.php"/>
+        </fileset>
+      </batchtest>
+      <formatter type="xml" todir="report"
+          outfile="test_results_adx_v201109.xml"/>
+    </phpunit>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Target: run tests for v201109_1                                     -->
+  <!-- =================================================================== -->
+  <target name="test-v201109_1" depends="init">
+    <mkdir dir="report" />
+    <phpunit haltonfailure="false" printsummary="true">
+      <batchtest>
+        <fileset dir="${tests.dir}">
+          <include name="Google/Api/Ads/AdWords/v201109_1/*Test.php"/>
+          <include name="examples/v201109_1/*Test.php"/>
+        </fileset>
+      </batchtest>
+      <formatter type="xml" todir="report"
+          outfile="test_results_v201109_1.xml"/>
+    </phpunit>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Target: run tests for AdX v201109_1                                 -->
+  <!-- =================================================================== -->
+  <target name="test-adx-v201109_1" depends="init">
+    <mkdir dir="report" />
+    <phpunit haltonfailure="false" printsummary="true">
+      <batchtest>
+        <fileset dir="${tests.dir}">
+          <include name="adx-examples/v201109_1/*Test.php"/>
+        </fileset>
+      </batchtest>
+      <formatter type="xml" todir="report"
+          outfile="test_results_adx_v201109_1.xml"/>
+    </phpunit>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Target: run tests for v201206                                       -->
+  <!-- =================================================================== -->
+  <target name="test-v201206" depends="init">
+    <mkdir dir="report" />
+    <phpunit haltonfailure="false" printsummary="true">
+      <batchtest>
+        <fileset dir="${tests.dir}">
+          <include name="Google/Api/Ads/AdWords/v201206/*Test.php"/>
+          <include name="examples/v201206/*Test.php"/>
+        </fileset>
+      </batchtest>
+      <formatter type="xml" todir="report" outfile="test_results_v201206.xml"/>
+    </phpunit>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Target: run tests for AdX v201206                                   -->
+  <!-- =================================================================== -->
+  <target name="test-adx-v201206" depends="init">
+    <mkdir dir="report" />
+    <phpunit haltonfailure="false" printsummary="true">
+      <batchtest>
+        <fileset dir="${tests.dir}">
+          <include name="adx-examples/v201206/*Test.php"/>
+        </fileset>
+      </batchtest>
+      <formatter type="xml" todir="report"
+          outfile="test_results_adx_v201206.xml"/>
+    </phpunit>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Target: run tests for core library                                  -->
+  <!-- =================================================================== -->
+  <target name="test-core" depends="init">
+    <mkdir dir="report" />
+    <phpunit haltonfailure="false" printsummary="true">
+      <batchtest>
+        <fileset dir="${tests.dir}">
+          <include name="**/Lib/*Test.php"/>
+          <include name="**/Util/*Test.php"/>
+        </fileset>
+      </batchtest>
+      <formatter type="xml" todir="report" outfile="test_results_core.xml"/>
+    </phpunit>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Target: generates documentation                                     -->
+  <!-- =================================================================== -->
+  <target name="docs" depends="init">
+    <phpdoc title="AdWords API Documentation"
+        destdir="${docs.dir}"
+        sourcecode="no"
+        output="HTML:frames:default">
+      <fileset dir="${src.dir}" expandsymboliclinks="true">
+        <include name="**/*.php" />
+      </fileset>
+      <projdocfileset dir=".">
+        <include name="README" />
+        <include name="ChangeLog" />
+        <include name="COPYING" />
+      </projdocfileset>
+    </phpdoc>
+    <!-- Remove timestamp to make commits more meaningful. -->
+    <reflexive>
+      <fileset dir="${docs.dir}">
+        <include name="**/*.html" />
+      </fileset>
+      <filterchain>
+        <replaceregexp>
+          <regexp pattern="Documentation generated on (.*?) by"
+              replace="Documentation generated by"/>
+        </replaceregexp>
+      </filterchain>
+    </reflexive>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Target: create distributions                                        -->
+  <!-- =================================================================== -->
+  <target name="dist" depends="init">
+    <phingcall target="dist-lib"/>
+    <phingcall target="dist-source"/>
+    <phingcall target="dist-adx-lib"/>
+    <phingcall target="dist-adx-source"/>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Target: package distribution                                        -->
+  <!-- =================================================================== -->
+  <target name="dist-lib" depends="init">
+    <property name="prefix" value="aw_api_php_lib_${lib.version}"/>
+    <property name="package.dir" value="${build.dir}/${prefix}"/>
+    <mkdir dir="${package.dir}"/>
+    <copy todir="${package.dir}/${prefix}">
+      <fileset dir="${project.basedir}" expandsymboliclinks="true">
+        <include name="docs/**"/>
+        <include name="examples/**"/>
+        <include name="logs/README"/>
+        <include name="src/**"/>
+        <include name="ChangeLog"/>
+        <include name="COPYING"/>
+        <include name="README"/>
+      </fileset>
+    </copy>
+    <chmod mode="777">
+      <fileset dir="${package.dir}">
+        <include name="**/*"/>
+      </fileset>
+    </chmod>
+    <tar destfile="${dist.dir}/${prefix}.tar.gz" compression="gzip">
+      <fileset dir="${package.dir}">
+        <include name="**/*"/>
+        <exclude name="**/.svn"/>
+        <exclude name="**/.svn/**"/>
+      </fileset>
+    </tar>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Target: package source distribution                                 -->
+  <!-- =================================================================== -->
+  <target name="dist-source" depends="init">
+    <property name="prefix" value="aw_api_php_lib_${lib.version}_src"/>
+    <property name="package.dir" value="${build.dir}/${prefix}"/>
+    <mkdir dir="${package.dir}"/>
+    <copy todir="${package.dir}/${prefix}">
+      <fileset dir="${project.basedir}" expandsymboliclinks="true">
+        <include name="build_lib/**"/>
+        <include name="docs/**"/>
+        <include name="examples/**"/>
+        <include name="logs/README"/>
+        <include name="src/**"/>
+        <include name="tests/**"/>
+        <include name="test_data/**"/>
+        <include name="build.properties"/>
+        <include name="build.xml"/>
+        <include name="ChangeLog"/>
+        <include name="COPYING"/>
+        <include name="README"/>
+      </fileset>
+    </copy>
+    <chmod mode="777">
+      <fileset dir="${package.dir}">
+        <include name="**/*"/>
+      </fileset>
+    </chmod>
+    <tar destfile="${dist.dir}/${prefix}.tar.gz" compression="gzip">
+      <fileset dir="${package.dir}">
+        <include name="**/*"/>
+        <exclude name="**/.svn"/>
+        <exclude name="**/.svn/**"/>
+      </fileset>
+    </tar>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Target: package adx distribution                                    -->
+  <!-- =================================================================== -->
+  <target name="dist-adx-lib" depends="init">
+    <property name="prefix" value="adx_api_php_lib_${lib.version}"/>
+    <property name="package.dir" value="${build.dir}/${prefix}"/>
+    <mkdir dir="${package.dir}"/>
+    <copy todir="${package.dir}/${prefix}">
+      <fileset dir="${project.basedir}" expandsymboliclinks="true">
+        <include name="docs/**"/>
+        <include name="examples/**"/>
+        <include name="logs/README"/>
+        <include name="src/**"/>
+        <include name="ChangeLog"/>
+        <include name="COPYING"/>
+        <include name="README"/>
+        <not>
+          <containsregexp expression="Restriction:.*[ ,]adwords-only(?:[ ,]|$)" />
+        </not>
+      </fileset>
+    </copy>
+    <copy todir="${package.dir}/${prefix}/examples" overwrite="true">
+      <fileset dir="${adx-examples.dir}" />
+    </copy>
+    <chmod mode="777">
+      <fileset dir="${package.dir}">
+        <include name="**/*"/>
+      </fileset>
+    </chmod>
+    <tar destfile="${dist.dir}/${prefix}.tar.gz" compression="gzip">
+      <fileset dir="${package.dir}">
+        <include name="**/*"/>
+        <exclude name="**/.svn"/>
+        <exclude name="**/.svn/**"/>
+      </fileset>
+    </tar>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Target: package adx source distribution                             -->
+  <!-- =================================================================== -->
+  <target name="dist-adx-source" depends="init">
+    <property name="prefix" value="adx_api_php_lib_${lib.version}_src"/>
+    <property name="package.dir" value="${build.dir}/${prefix}"/>
+    <mkdir dir="${package.dir}"/>
+    <copy todir="${package.dir}/${prefix}">
+      <fileset dir="${project.basedir}" expandsymboliclinks="true">
+        <include name="build_lib/**"/>
+        <include name="docs/**"/>
+        <include name="examples/**"/>
+        <include name="logs/README"/>
+        <include name="src/**"/>
+        <include name="tests/**"/>
+        <include name="test_data/**"/>
+        <include name="build.xml"/>
+        <include name="ChangeLog"/>
+        <include name="COPYING"/>
+        <include name="README"/>
+        <not>
+          <containsregexp expression="Restriction:.*[ ,]adwords-only(?:[ ,]|$)" />
+        </not>
+      </fileset>
+    </copy>
+    <copy todir="${package.dir}/${prefix}/examples" overwrite="true">
+      <fileset dir="${adx-examples.dir}" />
+    </copy>
+    <chmod mode="777">
+      <fileset dir="${package.dir}">
+        <include name="**/*"/>
+      </fileset>
+    </chmod>
+    <tar destfile="${dist.dir}/${prefix}.tar.gz" compression="gzip">
+      <fileset dir="${package.dir}">
+        <include name="**/*"/>
+        <exclude name="**/.svn"/>
+        <exclude name="**/.svn/**"/>
+      </fileset>
+    </tar>
+  </target>
+</project>
