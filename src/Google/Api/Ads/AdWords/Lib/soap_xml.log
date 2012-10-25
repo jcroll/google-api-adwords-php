@@ -1,0 +1,710 @@
+[Oct 24 2012 11:48:46.000000 - INFO] POST /api/adwords/mcm/v201209/ManagedCustomerService HTTP/1.1
+Host: adwords-sandbox.google.com
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/5.3.17, gzip
+Accept-Encoding: gzip, deflate
+Content-Encoding: gzip
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 622
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201209" xmlns:ns2="https://adwords.google.com/api/adwords/mcm/v201209">
+  <SOAP-ENV:Header>
+    <ns2:RequestHeader>
+      <ns1:authToken>*****</ns1:authToken>
+      <ns1:developerToken>jarrett.croll@gmail.com++CAD</ns1:developerToken>
+      <ns1:userAgent>audiobookmart Adwords Optimizer (AwApi/3.1.1, php/5.3.17)</ns1:userAgent>
+    </ns2:RequestHeader>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns2:get>
+      <ns2:serviceSelector>
+        <ns1:fields>Login</ns1:fields>
+        <ns1:fields>CustomerId</ns1:fields>
+        <ns1:fields>Name</ns1:fields>
+      </ns2:serviceSelector>
+    </ns2:get>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=UTF-8
+Content-Encoding: gzip
+Date: Wed, 24 Oct 2012 18:48:57 GMT
+Expires: Wed, 24 Oct 2012 18:48:57 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Content-Length: 616
+Server: GSE
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <ns2:ResponseHeader xmlns:ns2="https://adwords.google.com/api/adwords/mcm/v201209" xmlns="https://adwords.google.com/api/adwords/cm/v201209">
+      <requestId>0004ccd289e62b200a83902300003756</requestId>
+      <serviceName>ManagedCustomerService</serviceName>
+      <methodName>get</methodName>
+      <operations>0</operations>
+      <responseTime>1623</responseTime>
+      <units>0</units>
+    </ns2:ResponseHeader>
+  </soap:Header>
+  <soap:Body>
+    <ns2:getResponse xmlns="https://adwords.google.com/api/adwords/cm/v201209" xmlns:ns2="https://adwords.google.com/api/adwords/mcm/v201209">
+      <ns2:rval>
+        <totalNumEntries>6</totalNumEntries>
+        <Page.Type>ManagedCustomerPage</Page.Type>
+        <ns2:entries>
+          <ns2:name/>
+          <ns2:login>jarrett.croll@gmail.com</ns2:login>
+          <ns2:companyName/>
+          <ns2:customerId>2677688771</ns2:customerId>
+          <ns2:canManageClients>true</ns2:canManageClients>
+          <ns2:currencyCode>USD</ns2:currencyCode>
+          <ns2:dateTimeZone>America/Los_Angeles</ns2:dateTimeZone>
+        </ns2:entries>
+        <ns2:entries>
+          <ns2:name/>
+          <ns2:login>client_1+jarrett.croll@gmail.com</ns2:login>
+          <ns2:companyName/>
+          <ns2:customerId>8741547828</ns2:customerId>
+          <ns2:canManageClients>false</ns2:canManageClients>
+          <ns2:currencyCode>USD</ns2:currencyCode>
+          <ns2:dateTimeZone>America/New_York</ns2:dateTimeZone>
+        </ns2:entries>
+        <ns2:entries>
+          <ns2:name/>
+          <ns2:login>client_2+jarrett.croll@gmail.com</ns2:login>
+          <ns2:companyName/>
+          <ns2:customerId>8905167255</ns2:customerId>
+          <ns2:canManageClients>false</ns2:canManageClients>
+          <ns2:currencyCode>USD</ns2:currencyCode>
+          <ns2:dateTimeZone>America/New_York</ns2:dateTimeZone>
+        </ns2:entries>
+        <ns2:entries>
+          <ns2:name/>
+          <ns2:login>client_3+jarrett.croll@gmail.com</ns2:login>
+          <ns2:companyName/>
+          <ns2:customerId>5467473104</ns2:customerId>
+          <ns2:canManageClients>false</ns2:canManageClients>
+          <ns2:currencyCode>USD</ns2:currencyCode>
+          <ns2:dateTimeZone>America/New_York</ns2:dateTimeZone>
+        </ns2:entries>
+        <ns2:entries>
+          <ns2:name/>
+          <ns2:login>client_4+jarrett.croll@gmail.com</ns2:login>
+          <ns2:companyName/>
+          <ns2:customerId>2029778953</ns2:customerId>
+          <ns2:canManageClients>false</ns2:canManageClients>
+          <ns2:currencyCode>USD</ns2:currencyCode>
+          <ns2:dateTimeZone>America/New_York</ns2:dateTimeZone>
+        </ns2:entries>
+        <ns2:entries>
+          <ns2:name/>
+          <ns2:login>client_5+jarrett.croll@gmail.com</ns2:login>
+          <ns2:companyName/>
+          <ns2:customerId>8093638010</ns2:customerId>
+          <ns2:canManageClients>false</ns2:canManageClients>
+          <ns2:currencyCode>USD</ns2:currencyCode>
+          <ns2:dateTimeZone>America/New_York</ns2:dateTimeZone>
+        </ns2:entries>
+        <ns2:links>
+          <ns2:managerCustomerId>2677688771</ns2:managerCustomerId>
+          <ns2:clientCustomerId>8741547828</ns2:clientCustomerId>
+        </ns2:links>
+        <ns2:links>
+          <ns2:managerCustomerId>2677688771</ns2:managerCustomerId>
+          <ns2:clientCustomerId>8905167255</ns2:clientCustomerId>
+        </ns2:links>
+        <ns2:links>
+          <ns2:managerCustomerId>2677688771</ns2:managerCustomerId>
+          <ns2:clientCustomerId>5467473104</ns2:clientCustomerId>
+        </ns2:links>
+        <ns2:links>
+          <ns2:managerCustomerId>2677688771</ns2:managerCustomerId>
+          <ns2:clientCustomerId>2029778953</ns2:clientCustomerId>
+        </ns2:links>
+        <ns2:links>
+          <ns2:managerCustomerId>2677688771</ns2:managerCustomerId>
+          <ns2:clientCustomerId>8093638010</ns2:clientCustomerId>
+        </ns2:links>
+      </ns2:rval>
+    </ns2:getResponse>
+  </soap:Body>
+</soap:Envelope>
+
+[Oct 24 2012 11:49:32.000000 - ERROR] POST /api/adwords/mcm/v201209/ManagedCustomerService HTTP/1.1
+Host: adwords-sandbox.google.com
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/5.3.17, gzip
+Accept-Encoding: gzip, deflate
+Content-Encoding: gzip
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 645
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201209" xmlns:ns2="https://adwords.google.com/api/adwords/mcm/v201209">
+  <SOAP-ENV:Header>
+    <ns2:RequestHeader>
+      <ns1:authToken>*****</ns1:authToken>
+      <ns1:clientCustomerId>8741547828</ns1:clientCustomerId>
+      <ns1:developerToken>jarrett.croll@gmail.com++CAD</ns1:developerToken>
+      <ns1:userAgent>audiobookmart Adwords Optimizer (AwApi/3.1.1, php/5.3.17)</ns1:userAgent>
+    </ns2:RequestHeader>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns2:get>
+      <ns2:serviceSelector>
+        <ns1:fields>Login</ns1:fields>
+        <ns1:fields>CustomerId</ns1:fields>
+        <ns1:fields>Name</ns1:fields>
+      </ns2:serviceSelector>
+    </ns2:get>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=UTF-8
+Content-Encoding: gzip
+Date: Wed, 24 Oct 2012 18:49:43 GMT
+Expires: Wed, 24 Oct 2012 18:49:43 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Content-Length: 506
+Server: GSE
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <ns2:ResponseHeader xmlns:ns2="https://adwords.google.com/api/adwords/mcm/v201209" xmlns="https://adwords.google.com/api/adwords/cm/v201209">
+      <requestId>0004ccd28ca143e00aec4ca800007192</requestId>
+      <serviceName>ManagedCustomerService</serviceName>
+      <methodName>get</methodName>
+      <operations>0</operations>
+      <responseTime>1653</responseTime>
+      <units>0</units>
+    </ns2:ResponseHeader>
+  </soap:Header>
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Server</faultcode>
+      <faultstring>[ManagedCustomerServiceError.BAD_ID @ ]</faultstring>
+      <detail>
+        <ns2:ApiExceptionFault xmlns="https://adwords.google.com/api/adwords/cm/v201209" xmlns:ns2="https://adwords.google.com/api/adwords/mcm/v201209">
+          <message>[ManagedCustomerServiceError.BAD_ID @ ]</message>
+          <ApplicationException.Type>ApiException</ApplicationException.Type>
+          <errors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:ManagedCustomerServiceError">
+            <fieldPath/>
+            <trigger/>
+            <errorString>ManagedCustomerServiceError.BAD_ID</errorString>
+            <ApiError.Type>ManagedCustomerServiceError</ApiError.Type>
+            <ns2:reason>UNKNOWN</ns2:reason>
+          </errors>
+        </ns2:ApiExceptionFault>
+      </detail>
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+[Oct 24 2012 11:50:00.000000 - INFO] POST /api/adwords/cm/v201209/CampaignService HTTP/1.1
+Host: adwords-sandbox.google.com
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/5.3.17, gzip
+Accept-Encoding: gzip, deflate
+Content-Encoding: gzip
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 697
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201209">
+  <SOAP-ENV:Header>
+    <ns1:RequestHeader>
+      <ns1:authToken>*****</ns1:authToken>
+      <ns1:clientCustomerId>8741547828</ns1:clientCustomerId>
+      <ns1:developerToken>jarrett.croll@gmail.com++CAD</ns1:developerToken>
+      <ns1:userAgent>audiobookmart Adwords Optimizer (AwApi/3.1.1, php/5.3.17)</ns1:userAgent>
+    </ns1:RequestHeader>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns1:get>
+      <ns1:serviceSelector>
+        <ns1:fields>Id</ns1:fields>
+        <ns1:fields>Name</ns1:fields>
+        <ns1:ordering>
+          <ns1:field>Name</ns1:field>
+          <ns1:sortOrder>ASCENDING</ns1:sortOrder>
+        </ns1:ordering>
+        <ns1:paging>
+          <ns1:startIndex>0</ns1:startIndex>
+          <ns1:numberResults>500</ns1:numberResults>
+        </ns1:paging>
+      </ns1:serviceSelector>
+    </ns1:get>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=UTF-8
+Content-Encoding: gzip
+Date: Wed, 24 Oct 2012 18:50:11 GMT
+Expires: Wed, 24 Oct 2012 18:50:11 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Content-Length: 367
+Server: GSE
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <ResponseHeader xmlns="https://adwords.google.com/api/adwords/cm/v201209">
+      <requestId>0004ccd28e597b300a83812200000b23</requestId>
+      <serviceName>CampaignService</serviceName>
+      <methodName>get</methodName>
+      <operations>1</operations>
+      <responseTime>744</responseTime>
+      <units>1</units>
+    </ResponseHeader>
+  </soap:Header>
+  <soap:Body>
+    <getResponse xmlns="https://adwords.google.com/api/adwords/cm/v201209">
+      <rval>
+        <totalNumEntries>0</totalNumEntries>
+        <Page.Type>CampaignPage</Page.Type>
+        <totalBudget>
+          <period>DAILY</period>
+          <amount>
+            <ComparableValue.Type>Money</ComparableValue.Type>
+            <microAmount>0</microAmount>
+          </amount>
+        </totalBudget>
+      </rval>
+    </getResponse>
+  </soap:Body>
+</soap:Envelope>
+
+[Oct 24 2012 12:03:20.000000 - INFO] POST /api/adwords/cm/v201209/BudgetService HTTP/1.1
+Host: adwords-sandbox.google.com
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/5.3.17, gzip
+Accept-Encoding: gzip, deflate
+Content-Encoding: gzip
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 728
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201209">
+  <SOAP-ENV:Header>
+    <ns1:RequestHeader>
+      <ns1:authToken>*****</ns1:authToken>
+      <ns1:clientCustomerId>8741547828</ns1:clientCustomerId>
+      <ns1:developerToken>jarrett.croll@gmail.com++CAD</ns1:developerToken>
+      <ns1:userAgent>audiobookmart Adwords Optimizer (AwApi/3.1.1, php/5.3.17)</ns1:userAgent>
+    </ns1:RequestHeader>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns1:mutate>
+      <ns1:operations>
+        <ns1:operator>ADD</ns1:operator>
+        <ns1:operand>
+          <ns1:name>Interplanetary Cruise Budget #50883b7627451</ns1:name>
+          <ns1:period>DAILY</ns1:period>
+          <ns1:amount>
+            <ns1:microAmount>50000000</ns1:microAmount>
+          </ns1:amount>
+          <ns1:deliveryMethod>STANDARD</ns1:deliveryMethod>
+        </ns1:operand>
+      </ns1:operations>
+    </ns1:mutate>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=UTF-8
+Content-Encoding: gzip
+Date: Wed, 24 Oct 2012 19:03:30 GMT
+Expires: Wed, 24 Oct 2012 19:03:30 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Content-Length: 445
+Server: GSE
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <ResponseHeader xmlns="https://adwords.google.com/api/adwords/cm/v201209">
+      <requestId>0004ccd2bdf38c000a82850c00000ede</requestId>
+      <serviceName>BudgetService</serviceName>
+      <methodName>mutate</methodName>
+      <operations>1</operations>
+      <responseTime>1569</responseTime>
+      <units>1</units>
+    </ResponseHeader>
+  </soap:Header>
+  <soap:Body>
+    <mutateResponse xmlns="https://adwords.google.com/api/adwords/cm/v201209">
+      <rval>
+        <ListReturnValue.Type>BudgetReturnValue</ListReturnValue.Type>
+        <value>
+          <budgetId>377327</budgetId>
+          <name>Interplanetary Cruise Budget #50883b7627451</name>
+          <period>DAILY</period>
+          <amount>
+            <ComparableValue.Type>Money</ComparableValue.Type>
+            <microAmount>50000000</microAmount>
+          </amount>
+          <deliveryMethod>STANDARD</deliveryMethod>
+          <status>ACTIVE</status>
+        </value>
+      </rval>
+    </mutateResponse>
+  </soap:Body>
+</soap:Envelope>
+
+[Oct 24 2012 12:03:25.000000 - INFO] POST /api/adwords/cm/v201209/CampaignService HTTP/1.1
+Host: adwords-sandbox.google.com
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/5.3.17, gzip
+Accept-Encoding: gzip, deflate
+Content-Encoding: gzip
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 1105
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201209" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SOAP-ENV:Header>
+    <ns1:RequestHeader>
+      <ns1:authToken>*****</ns1:authToken>
+      <ns1:clientCustomerId>8741547828</ns1:clientCustomerId>
+      <ns1:developerToken>jarrett.croll@gmail.com++CAD</ns1:developerToken>
+      <ns1:userAgent>audiobookmart Adwords Optimizer (AwApi/3.1.1, php/5.3.17)</ns1:userAgent>
+    </ns1:RequestHeader>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns1:mutate>
+      <ns1:operations>
+        <ns1:operator>ADD</ns1:operator>
+        <ns1:operand>
+          <ns1:name>Interplanetary Cruise #50883b78c4fb0</ns1:name>
+          <ns1:status>PAUSED</ns1:status>
+          <ns1:startDate>20121025</ns1:startDate>
+          <ns1:endDate>20121124</ns1:endDate>
+          <ns1:budget>
+            <ns1:budgetId>377327</ns1:budgetId>
+          </ns1:budget>
+          <ns1:biddingStrategy xsi:type="ns1:ManualCPC">
+            <ns1:enhancedCpcEnabled>true</ns1:enhancedCpcEnabled>
+          </ns1:biddingStrategy>
+          <ns1:adServingOptimizationStatus>ROTATE</ns1:adServingOptimizationStatus>
+          <ns1:frequencyCap>
+            <ns1:impressions>5</ns1:impressions>
+            <ns1:timeUnit>DAY</ns1:timeUnit>
+            <ns1:level>ADGROUP</ns1:level>
+          </ns1:frequencyCap>
+          <ns1:settings xsi:type="ns1:KeywordMatchSetting">
+            <ns1:optIn>true</ns1:optIn>
+          </ns1:settings>
+          <ns1:settings xsi:type="ns1:TargetRestrictSetting">
+            <ns1:useAdGroup>true</ns1:useAdGroup>
+          </ns1:settings>
+          <ns1:settings xsi:type="ns1:GeoTargetTypeSetting">
+            <ns1:positiveGeoTargetType>DONT_CARE</ns1:positiveGeoTargetType>
+            <ns1:negativeGeoTargetType>DONT_CARE</ns1:negativeGeoTargetType>
+          </ns1:settings>
+          <ns1:networkSetting>
+            <ns1:targetGoogleSearch>true</ns1:targetGoogleSearch>
+            <ns1:targetSearchNetwork>true</ns1:targetSearchNetwork>
+            <ns1:targetContentNetwork>true</ns1:targetContentNetwork>
+          </ns1:networkSetting>
+        </ns1:operand>
+      </ns1:operations>
+      <ns1:operations>
+        <ns1:operator>ADD</ns1:operator>
+        <ns1:operand>
+          <ns1:name>Interplanetary Cruise #50883b78c5b4d</ns1:name>
+          <ns1:status>PAUSED</ns1:status>
+          <ns1:startDate>20121025</ns1:startDate>
+          <ns1:endDate>20121124</ns1:endDate>
+          <ns1:budget>
+            <ns1:budgetId>377327</ns1:budgetId>
+          </ns1:budget>
+          <ns1:biddingStrategy xsi:type="ns1:ManualCPC">
+            <ns1:enhancedCpcEnabled>true</ns1:enhancedCpcEnabled>
+          </ns1:biddingStrategy>
+          <ns1:adServingOptimizationStatus>ROTATE</ns1:adServingOptimizationStatus>
+          <ns1:frequencyCap>
+            <ns1:impressions>5</ns1:impressions>
+            <ns1:timeUnit>DAY</ns1:timeUnit>
+            <ns1:level>ADGROUP</ns1:level>
+          </ns1:frequencyCap>
+          <ns1:settings xsi:type="ns1:KeywordMatchSetting">
+            <ns1:optIn>true</ns1:optIn>
+          </ns1:settings>
+          <ns1:settings xsi:type="ns1:TargetRestrictSetting">
+            <ns1:useAdGroup>true</ns1:useAdGroup>
+          </ns1:settings>
+          <ns1:settings xsi:type="ns1:GeoTargetTypeSetting">
+            <ns1:positiveGeoTargetType>DONT_CARE</ns1:positiveGeoTargetType>
+            <ns1:negativeGeoTargetType>DONT_CARE</ns1:negativeGeoTargetType>
+          </ns1:settings>
+          <ns1:networkSetting>
+            <ns1:targetGoogleSearch>true</ns1:targetGoogleSearch>
+            <ns1:targetSearchNetwork>true</ns1:targetSearchNetwork>
+            <ns1:targetContentNetwork>true</ns1:targetContentNetwork>
+          </ns1:networkSetting>
+        </ns1:operand>
+      </ns1:operations>
+    </ns1:mutate>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=UTF-8
+Content-Encoding: gzip
+Date: Wed, 24 Oct 2012 19:03:35 GMT
+Expires: Wed, 24 Oct 2012 19:03:35 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Content-Length: 976
+Server: GSE
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <ResponseHeader xmlns="https://adwords.google.com/api/adwords/cm/v201209">
+      <requestId>0004ccd2be1c61200a82850c00000ede</requestId>
+      <serviceName>CampaignService</serviceName>
+      <methodName>mutate</methodName>
+      <operations>2</operations>
+      <responseTime>4293</responseTime>
+      <units>2</units>
+    </ResponseHeader>
+  </soap:Header>
+  <soap:Body>
+    <mutateResponse xmlns="https://adwords.google.com/api/adwords/cm/v201209">
+      <rval>
+        <ListReturnValue.Type>CampaignReturnValue</ListReturnValue.Type>
+        <value>
+          <id>794301</id>
+          <name>Interplanetary Cruise #50883b78c4fb0</name>
+          <status>PAUSED</status>
+          <servingStatus>PENDING</servingStatus>
+          <startDate>20121025</startDate>
+          <endDate>20121124</endDate>
+          <budget>
+            <budgetId>377327</budgetId>
+            <name>Interplanetary Cruise Budget #50883b7627451</name>
+            <period>DAILY</period>
+            <amount>
+              <ComparableValue.Type>Money</ComparableValue.Type>
+              <microAmount>50000000</microAmount>
+            </amount>
+            <deliveryMethod>STANDARD</deliveryMethod>
+            <status>ACTIVE</status>
+          </budget>
+          <biddingStrategy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ManualCPC">
+            <BiddingStrategy.Type>ManualCPC</BiddingStrategy.Type>
+            <enhancedCpcEnabled>true</enhancedCpcEnabled>
+          </biddingStrategy>
+          <conversionOptimizerEligibility>
+            <eligible>false</eligible>
+            <rejectionReasons>CAMPAIGN_IS_NOT_ACTIVE</rejectionReasons>
+          </conversionOptimizerEligibility>
+          <adServingOptimizationStatus>ROTATE</adServingOptimizationStatus>
+          <frequencyCap>
+            <impressions>5</impressions>
+            <timeUnit>DAY</timeUnit>
+            <level>ADGROUP</level>
+          </frequencyCap>
+          <settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GeoTargetTypeSetting">
+            <Setting.Type>GeoTargetTypeSetting</Setting.Type>
+            <positiveGeoTargetType>DONT_CARE</positiveGeoTargetType>
+            <negativeGeoTargetType>DONT_CARE</negativeGeoTargetType>
+          </settings>
+          <settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TargetRestrictSetting">
+            <Setting.Type>TargetRestrictSetting</Setting.Type>
+            <useAdGroup>true</useAdGroup>
+          </settings>
+          <settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="KeywordMatchSetting">
+            <Setting.Type>KeywordMatchSetting</Setting.Type>
+            <optIn>true</optIn>
+          </settings>
+          <networkSetting>
+            <targetGoogleSearch>true</targetGoogleSearch>
+            <targetSearchNetwork>true</targetSearchNetwork>
+            <targetContentNetwork>true</targetContentNetwork>
+            <targetPartnerSearchNetwork>false</targetPartnerSearchNetwork>
+          </networkSetting>
+        </value>
+        <value>
+          <id>794302</id>
+          <name>Interplanetary Cruise #50883b78c5b4d</name>
+          <status>PAUSED</status>
+          <servingStatus>PENDING</servingStatus>
+          <startDate>20121025</startDate>
+          <endDate>20121124</endDate>
+          <budget>
+            <budgetId>377327</budgetId>
+            <name>Interplanetary Cruise Budget #50883b7627451</name>
+            <period>DAILY</period>
+            <amount>
+              <ComparableValue.Type>Money</ComparableValue.Type>
+              <microAmount>50000000</microAmount>
+            </amount>
+            <deliveryMethod>STANDARD</deliveryMethod>
+            <status>ACTIVE</status>
+          </budget>
+          <biddingStrategy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ManualCPC">
+            <BiddingStrategy.Type>ManualCPC</BiddingStrategy.Type>
+            <enhancedCpcEnabled>true</enhancedCpcEnabled>
+          </biddingStrategy>
+          <conversionOptimizerEligibility>
+            <eligible>false</eligible>
+            <rejectionReasons>CAMPAIGN_IS_NOT_ACTIVE</rejectionReasons>
+          </conversionOptimizerEligibility>
+          <adServingOptimizationStatus>ROTATE</adServingOptimizationStatus>
+          <frequencyCap>
+            <impressions>5</impressions>
+            <timeUnit>DAY</timeUnit>
+            <level>ADGROUP</level>
+          </frequencyCap>
+          <settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="GeoTargetTypeSetting">
+            <Setting.Type>GeoTargetTypeSetting</Setting.Type>
+            <positiveGeoTargetType>DONT_CARE</positiveGeoTargetType>
+            <negativeGeoTargetType>DONT_CARE</negativeGeoTargetType>
+          </settings>
+          <settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TargetRestrictSetting">
+            <Setting.Type>TargetRestrictSetting</Setting.Type>
+            <useAdGroup>true</useAdGroup>
+          </settings>
+          <settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="KeywordMatchSetting">
+            <Setting.Type>KeywordMatchSetting</Setting.Type>
+            <optIn>true</optIn>
+          </settings>
+          <networkSetting>
+            <targetGoogleSearch>true</targetGoogleSearch>
+            <targetSearchNetwork>true</targetSearchNetwork>
+            <targetContentNetwork>true</targetContentNetwork>
+            <targetPartnerSearchNetwork>false</targetPartnerSearchNetwork>
+          </networkSetting>
+        </value>
+      </rval>
+    </mutateResponse>
+  </soap:Body>
+</soap:Envelope>
+
+[Oct 24 2012 12:03:49.000000 - INFO] POST /api/adwords/cm/v201209/CampaignService HTTP/1.1
+Host: adwords-sandbox.google.com
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/5.3.17, gzip
+Accept-Encoding: gzip, deflate
+Content-Encoding: gzip
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 696
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://adwords.google.com/api/adwords/cm/v201209">
+  <SOAP-ENV:Header>
+    <ns1:RequestHeader>
+      <ns1:authToken>*****</ns1:authToken>
+      <ns1:clientCustomerId>8741547828</ns1:clientCustomerId>
+      <ns1:developerToken>jarrett.croll@gmail.com++CAD</ns1:developerToken>
+      <ns1:userAgent>audiobookmart Adwords Optimizer (AwApi/3.1.1, php/5.3.17)</ns1:userAgent>
+    </ns1:RequestHeader>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns1:get>
+      <ns1:serviceSelector>
+        <ns1:fields>Id</ns1:fields>
+        <ns1:fields>Name</ns1:fields>
+        <ns1:ordering>
+          <ns1:field>Name</ns1:field>
+          <ns1:sortOrder>ASCENDING</ns1:sortOrder>
+        </ns1:ordering>
+        <ns1:paging>
+          <ns1:startIndex>0</ns1:startIndex>
+          <ns1:numberResults>500</ns1:numberResults>
+        </ns1:paging>
+      </ns1:serviceSelector>
+    </ns1:get>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=UTF-8
+Content-Encoding: gzip
+Date: Wed, 24 Oct 2012 19:03:59 GMT
+Expires: Wed, 24 Oct 2012 19:03:59 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Content-Length: 485
+Server: GSE
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <ResponseHeader xmlns="https://adwords.google.com/api/adwords/cm/v201209">
+      <requestId>0004ccd2bfc23d380a83812200000b23</requestId>
+      <serviceName>CampaignService</serviceName>
+      <methodName>get</methodName>
+      <operations>2</operations>
+      <responseTime>423</responseTime>
+      <units>2</units>
+    </ResponseHeader>
+  </soap:Header>
+  <soap:Body>
+    <getResponse xmlns="https://adwords.google.com/api/adwords/cm/v201209">
+      <rval>
+        <totalNumEntries>2</totalNumEntries>
+        <Page.Type>CampaignPage</Page.Type>
+        <totalBudget>
+          <period>DAILY</period>
+          <amount>
+            <ComparableValue.Type>Money</ComparableValue.Type>
+            <microAmount>0</microAmount>
+          </amount>
+        </totalBudget>
+        <entries>
+          <id>794301</id>
+          <name>Interplanetary Cruise #50883b78c4fb0</name>
+          <campaignStats>
+            <network>ALL</network>
+            <Stats.Type>CampaignStats</Stats.Type>
+          </campaignStats>
+          <frequencyCap>
+            <impressions>0</impressions>
+          </frequencyCap>
+        </entries>
+        <entries>
+          <id>794302</id>
+          <name>Interplanetary Cruise #50883b78c5b4d</name>
+          <campaignStats>
+            <network>ALL</network>
+            <Stats.Type>CampaignStats</Stats.Type>
+          </campaignStats>
+          <frequencyCap>
+            <impressions>0</impressions>
+          </frequencyCap>
+        </entries>
+      </rval>
+    </getResponse>
+  </soap:Body>
+</soap:Envelope>
+

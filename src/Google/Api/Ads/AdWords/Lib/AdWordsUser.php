@@ -1,4 +1,5 @@
 <?php
+
 /**
  * User class for the AdWords API to create SOAP clients to the available API
  * services.
